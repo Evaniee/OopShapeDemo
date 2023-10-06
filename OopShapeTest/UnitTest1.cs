@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using OopShapeDemo;
 
@@ -34,6 +34,14 @@ namespace OopShapeTest
             Assert.ThrowsException<ArgumentException>(() => { new Icosagon(-1); }, "Shape did not throw expected arguement when negative value passed to constructor..");
         }
 
+        [TestMethod]
+        // Test Square can calculate area correctly
+        public void SquareAreaTest()
+        {
+            Regular2DShape myShape = new square(5);
+            double area = myShape.Area();
+            Assert.AreEqual(25, Math.Round(area, 2, MidpointRounding.AwayFromZero)); // Google checker only does to 2 D.P.
+        }
         [TestCategory("Circle.cs")]
         [TestMethod]
         // Test Circle can calculate area correctly.
