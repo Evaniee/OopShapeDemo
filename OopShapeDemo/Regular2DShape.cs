@@ -9,7 +9,7 @@ namespace OopShapeDemo
         /// <summary>
         /// Length of one side of the shape.
         /// </summary>
-        public double Length
+        public double length
         {
             get { return _length; }
             private set { }
