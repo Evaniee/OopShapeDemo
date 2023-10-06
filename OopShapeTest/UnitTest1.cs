@@ -31,5 +31,28 @@ namespace OopShapeTest
         {
             Assert.ThrowsException<ArgumentException>(() => { new Icosagon(-1); }, "Shape did not throw expected arguement when negative value passed to constructor..");
         }
+        [TestCategory("Triangle.cs")]
+
+        [TestMethod]
+        // Test Triangles can calculate area correctly.
+        public void TriangleAreaTest()
+        {
+            Regular2DShape myShape = new Triangle(15);
+            double area = myShape.Area();
+            Assert.AreEqual(97.43, Math.Round(area, 2, MidpointRounding.AwayFromZero)); // Google checker only does to 2 D.P.
+        }
+        [TestMethod]
+        // Test Triangles throw error when sent 0 as an arguement for length.
+        public void TriangleConstructorZeroTest()
+        {
+            Assert.ThrowsException<ArgumentException>(() => { new Triangle(0); }, "Shape did not throw expected arguement when zero passed to constructor.");
+        }
+
+        [TestMethod]
+        // Test Icosagons throw error when sent a negative number as an arguement for length.
+        public void TriangleConstructorNegativeTest()
+        {
+            Assert.ThrowsException<ArgumentException>(() => { new Triangle(-1); }, "Shape did not throw expected arguement when negative value passed to constructor..");
+        }
     }
 }
