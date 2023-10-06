@@ -19,6 +19,15 @@ namespace OopShapeTest
         }
 
         [TestMethod]
+        // Test Icosagons can calculate area correctly.
+        public void SquareAreaTest()
+        {
+            Regular2DShape myShape = new Square(5);
+            double area = myShape.Area();
+            Assert.AreEqual(25, Math.Round(area, 2, MidpointRounding.AwayFromZero)); // Google checker only does to 2 D.P.
+        }
+
+        [TestMethod]
         // Test Icosagons throw error when sent 0 as an arguement for length.
         public void IcosagonConstructorZeroTest()
         {
