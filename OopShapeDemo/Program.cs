@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace OopShapeDemo
 {
@@ -30,6 +30,7 @@ namespace OopShapeDemo
             // Prompt user for Shape
             Console.WriteLine("Select your shape:");
             Console.WriteLine("\tA: Icosagon");
+            Console.WriteLine(("\tC: Circle"));
             Console.WriteLine("\tD: Square");
             Console.WriteLine("\tEsc: Exit Program");
             Console.Write("Choice: ");
@@ -41,8 +42,8 @@ namespace OopShapeDemo
                     case ConsoleKey.Escape: return null;
 
                     case ConsoleKey.A: return new Icosagon(length).Area();
-
                     case ConsoleKey.D: return new square(length).Area();
+                    case ConsoleKey.C: return new Circle(length).Area();
                 }
         }
     }
